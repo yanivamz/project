@@ -1,5 +1,8 @@
 import React from 'react'
 const text = import.meta.env.VITE_NISIM;
+const apiHost = import.meta.env.VITE_API_HOST;
+
+console.log (apiHost);
 
 function App() {
   return (
