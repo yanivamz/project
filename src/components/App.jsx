@@ -3,7 +3,7 @@ const text = import.meta.env.VITE_NISIM;
 const apiHost = import.meta.env.VITE_API_HOST;
 
 fetch(`${apiHost}/test`)
-  .then(res => res.text)
+  .then(res => res.text())
   .then(data => console.log(data));
 
 function App() {
