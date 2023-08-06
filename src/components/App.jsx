@@ -9,7 +9,7 @@ fetch(`${apiHost}/test`)
 function App() {
   return (
     <>
-      <h1>yaniv project a</h1>
+      <h1>נדב הגבר לך תסדר את הבית</h1>
       <h2>{text}</h2>
 
     </>
