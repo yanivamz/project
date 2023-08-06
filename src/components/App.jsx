@@ -11,7 +11,7 @@ function App() {
     <>
 
       <img src="images/yamit.jpeg" alt="yamit" />
-      <h1>My butiful wife</h1>
+      <h1>My Beautiful Wife</h1>
       <h2>{text}</h2>
 
     </>
