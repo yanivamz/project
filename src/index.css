@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; }
+
+:root {
+  --bg-color1: hsl(0, 0%, 4%);
+  --bg-color2: hsl(0, 0%, 8%);
+  --fg-color1: hsl(0, 0%, 95%);
+  --fg-color2: hsl(0, 0%, 90%);
+}
+
+body { background-color: var(--bg-color1); color: white; }
+footer, header { background-color: var(--bg-color2); }
+
+header h1 {
+  text-align: center;
+  padding-block: 1rem;
+}
+footer p {
+  text-align: center;
+  padding-block: 1rem;
+}
+
+/* stick footer to the bottom */
+html, body { height: 100% }
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+footer { margin-block-start: auto; }
