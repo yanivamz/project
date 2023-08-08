@@ -27,3 +27,23 @@ html, body { height: 100% }
   flex-direction: column;
 }
 footer { margin-block-start: auto; }
+
+.carousel {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.arrow {
+  padding: 1rem;
+}
+
+.container {
+  height: 100%;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}

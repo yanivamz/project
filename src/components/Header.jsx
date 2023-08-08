@@ -1,6 +1,8 @@
+import Navbar from "./Navbar";
+
 function Header() {
     return <header>
-        <h1>Yaniv React Template</h1>
+      <Navbar/>
     </header>;
 }
 

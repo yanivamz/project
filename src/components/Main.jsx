@@ -1,8 +1,10 @@
 const text = import.meta.env.VITE_NISIM;
+import { imagesUrls } from '../imageUrls.js';
+import Carousel from './Carousel.jsx';
 
 function Main() {
     return <main>
-        <h1>{text}</h1>
+        <Carousel urls={imagesUrls} />
     </main>;
 }
 
