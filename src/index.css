@@ -47,3 +47,15 @@ footer { margin-block-start: auto; }
   display: flex;
   justify-content: center;
 }
+
+.container img {
+  height: 100%;
+}
+
+.container {
+  background-color: hsl(0, 0%, 1%);
+}
+
+.carousel img {
+  padding: 1rem;
+}
