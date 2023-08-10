@@ -19,13 +19,13 @@ function Carousel({ urls }) {
 
     return <div className="carousel">
         <button className="arrow" onClick={handleLeftClick}>
-            <i className="fa-solid fa-arrow-left"></i>
+            <i className="fa-solid fa-arrow-left">Left</i>
         </button>
         <div className="container">
             <img src={urls[imgIndex]} alt="chad" />
         </div>
         <button className="arrow" onClick={handleRightClick}>
-            <i className="fa-solid fa-arrow-right"></i>
+            <i className="fa-solid fa-arrow-right">Right</i>
         </button>
     </div>;
 }

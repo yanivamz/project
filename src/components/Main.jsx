@@ -1,10 +1,18 @@
 const text = import.meta.env.VITE_NISIM;
-import { imagesUrls } from '../imageUrls.js';
-import Carousel from './Carousel.jsx';
+import Catalog from './Catalog.jsx';
+const apiHost = import.meta.env.VITE_API_HOST;
+
+function getProductList() {
+    return fetch(`${apiHost}/products`)
+        .then(res => res.text())
+        .then(data => JSON.parse(data));
+}
+
+const productListData = await getProductList();
 
 function Main() {
     return <main>
-        <Carousel urls={imagesUrls} />
+        <Catalog productList={productListData}/>
     </main>;
 }
 

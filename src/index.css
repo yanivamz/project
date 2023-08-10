@@ -59,3 +59,30 @@ footer { margin-block-start: auto; }
 .carousel img {
   padding: 1rem;
 }
+
+.catalog-pages {
+  background-color: rgb(68, 67, 67);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+
+}
+.product-card {
+  background-color: black;
+  padding: 1rem;
+  width: 17rem;
+  text-align: center;
+}
+
+
+.pages-nav{
+  display: flex;
+  padding-block: 1rem;
+  justify-content: center;
+}
+
+  .pages-nav button{
+    padding: .5rem 1rem;  
+  }
