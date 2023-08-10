@@ -11,5 +11,5 @@ function ProductCard({ product:{_id,name,price} }) {
         </div>
     );
 }
-
+ 
 export default ProductCard
