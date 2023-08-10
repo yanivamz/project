@@ -5,22 +5,51 @@ import React from 'react';
 
 const productPerPage = 3;
 
-export default function Catalog({ productList }) {
-    const [] = useState(0);
+function getPageProducts(productList, pageIndex) {
+    const first = productPerPage * pageIndex;
+    const last = first + productPerPage;
+    return productList.slice(first, last);
+}
+
+function getNumOfPages(productList){
+    return Math.ceil(productList.length / productPerPage);
+}
+
+function Catalog({ productList }) {
+    const [pageIndex, setPageIndex] = useState(0);
+    const pagesCount = getNumOfPages(productList);
+    console.log(pagesCount);
+    const PageProducts = getPageProducts(productList, pageIndex);
+
+    function setNextPage(){
+        if (pageIndex === pagesCount - 1) return;
+        setPageIndex(pageIndex + 1);
+    }
+
+    function setPreviousPage(){
+        if (pageIndex === 0) return;
+        setPageIndex(pageIndex - 1);
+    }
+
     return (
         <div className="catalog">
             <div className="catalog-pages">
-                {productList.map(product => (
+                {PageProducts.map(product => (
                     <ProductCard key={product._id} product={product} />
                 ))}
             </div>
             <div className="pages-nav">
-                <button>next page</button>
+                <button onClick={setPreviousPage}>
+                    previous
+                </button>
+                <button onClick={setNextPage}>
+                    next
+                </button>
             </div>
 
         </div>
     );
 }
 
-
+export default Catalog
 
