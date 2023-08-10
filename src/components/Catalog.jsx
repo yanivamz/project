@@ -1,6 +1,6 @@
 const apiHost = import.meta.env.VITE_API_HOST;
 import { useState } from "react";
-import ProductCard from "./ProductCurd";
+import ProductCard from "./ProductCard";
 import React from 'react';
 
 const productPerPage = 3;
