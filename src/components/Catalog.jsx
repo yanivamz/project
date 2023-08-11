@@ -1,5 +1,5 @@
 const apiHost = import.meta.env.VITE_API_HOST;
-import { useState } from "react";
+import { useState,memo, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import React from 'react';
 
@@ -17,8 +17,10 @@ function getNumOfPages(productList){
 
 function Catalog({ productList }) {
     const [pageIndex, setPageIndex] = useState(0);
-    const pagesCount = getNumOfPages(productList);
-    console.log(pagesCount);
+    useEffect(() => {
+        
+    },[]);
+    const pagesCount = getNumOfPages(productList);    
     const PageProducts = getPageProducts(productList, pageIndex);
 
     function setNextPage(){
@@ -51,5 +53,5 @@ function Catalog({ productList }) {
     );
 }
 
-export default Catalog
+export default memo(Catalog)
 

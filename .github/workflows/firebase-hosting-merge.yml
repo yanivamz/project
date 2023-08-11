@@ -9,7 +9,7 @@ name: Deploy to Firebase Hosting on merge
 
 env:
   VITE_NISIM: david
-  VITE_API_HOST: https://crimson-gecko-vest.cyclic.app/
+ # VITE_API_HOST: https://crimson-gecko-vest.cyclic.app/
   
 jobs:
   build_and_deploy:
