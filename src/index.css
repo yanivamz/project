@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
 
 :root {
-  --bg-color1: hsl(0, 0%, 4%);
+  --bg-color1: hsl(157, 78%, 58%);
   --bg-color2: hsl(0, 0%, 8%);
   --fg-color1: hsl(0, 0%, 95%);
   --fg-color2: hsl(0, 0%, 90%);
@@ -74,6 +74,7 @@ footer { margin-block-start: auto; }
   padding: 1rem;
   width: 17rem;
   text-align: center;
+  border-radius: 1rem;
 }
 
 
@@ -86,3 +87,13 @@ footer { margin-block-start: auto; }
   .pages-nav button{
     padding: .5rem 1rem;  
   }
+
+  .sort {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-style: solid;
+    
+  }
+  

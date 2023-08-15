@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-function ProductCard({ product:{_id,name,price} }) {
+function ProductCard({ product: { _id, name, price } }) {
     return (
         <div className="product-card">
             <div className="product-id">
@@ -13,5 +13,5 @@ function ProductCard({ product:{_id,name,price} }) {
         </div>
     );
 }
- 
+
 export default memo(ProductCard) 

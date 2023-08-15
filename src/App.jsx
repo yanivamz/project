@@ -5,18 +5,19 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Catlog from './components/Catalog';
 import Cart from './components/Cart';
+import Carousel from './components/Carousel';
+import { imagesUrls } from './imageUrls';
 
 function App() {
   return <>
     <Header />
     <main>
     <Routes>
-      <Route path='/' element={<Home/>} />
+      <Route path='/' element={<Carousel urls={imagesUrls} />} />
       <Route path='/products' element={<Catlog/>} />
       <Route path='/cart' element={<Cart/>} />
     </Routes>
     </main>
-    <Main/>
     <Footer />
   </>;
 }
