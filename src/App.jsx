@@ -7,6 +7,7 @@ import Catlog from './components/Catalog';
 import Cart from './components/Cart';
 import Carousel from './components/Carousel';
 import { imagesUrls } from './imageUrls';
+import AboutUs from './components/AboutUs';
 
 function App() {
   return <>
@@ -16,6 +17,7 @@ function App() {
       <Route path='/' element={<Carousel urls={imagesUrls} />} />
       <Route path='/products' element={<Catlog/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/aboutus' element={<AboutUs/>} />
     </Routes>
     </main>
     <Footer />
