@@ -10,6 +10,7 @@ function ProductCard({ product: { _id, name, price ,image}, addToCart ,cartItems
         <div className="product-card">
             <div className="product-image">
                 <img src={`${apiHost}${image}`} alt={name} />
+                {console.log(`${apiHost}${image}`)}
             </div>
             <div className="product-id">
                 id: {_id}
