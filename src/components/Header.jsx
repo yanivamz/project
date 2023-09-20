@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 
-function Header() {
+function Header({cartItems}) {
     return <header>
-      <Navbar/>
+      <Navbar cartItems={cartItems}/>
     </header>;
 }
 

@@ -1,8 +1,10 @@
 const apiHost = import.meta.env.VITE_API_HOST;
-import { useState, memo, useEffect } from "react";
+import { useState } from "react";
 import ProductCard from "./ProductCard";
 import React from 'react';
 import fetchApi from "./FetchApi";
+import Carousel from './Carousel';
+import { imagesUrls } from '../imageUrls';
 const productPerPage = 6;
 
 function getPageProducts(productList, pageIndex) {
@@ -15,17 +17,15 @@ function getNumOfPages(productList) {
     return Math.ceil(productList.length / productPerPage);
 }
 
-function Catalog() {
+function Catalog({cartItems, addToCart}) {
     const [pageIndex, setPageIndex] = useState(0);
-    const [isSorted, setIsSorted] = useState(false);
+    const [isSorted, setIsSorted] = useState(0);
+    const [isFilterd, setIsFilterd] = useState('');
     //console.log(isSorted);
-    const productList = fetchApi(isSorted);
-    useEffect(() => {
-
-    }, []);
+    const productList = fetchApi(isSorted,isFilterd);
     const pagesCount = getNumOfPages(productList);
     const PageProducts = getPageProducts(productList, pageIndex);
-
+console.log(productList);
     function setNextPage() {
         if (pageIndex === pagesCount - 1) return;
         setPageIndex(pageIndex + 1);
@@ -36,21 +36,50 @@ function Catalog() {
         setPageIndex(pageIndex - 1);
     }
 
-    function setsetIsSortedF() {
-        return setIsSorted(!isSorted);
+  /*  function setsetIsSortedF(event) {
+        setIsSorted(event.target.checked);
+    }*/
+    function Searchproducts(event) {
+        setIsFilterd(event.target.value);
+    }
+    function  handleSelectChange(event){
+        const selectedOption = event.target.value;
+        if (selectedOption === "option1"){
+            setIsSorted(0);
+            return
+        }
+        if (selectedOption === "option2"){
+            setIsSorted(1);
+            return
+        }
+        if (selectedOption === "option3"){
+            setIsSorted(2);
+            return
+        }
     }
 
     return (
         <main>
-            <div className="sort">
-                <label htmlFor="checkbox">sort by price</label>
-                <input type="checkbox" onChange={setsetIsSortedF} />
+    <div className="sort">
+        <select onChange={handleSelectChange} defaultValue="default">
+          <option value="default" disabled>מיין</option>
+          <option value="option2">מהזול_ליקר</option>
+          <option value="option3">מהיקר_לזול</option>
+        </select>
+      </div>
+            
+            <div className="search">  
+                <span>Search</span>
+               <input type="text" onChange={Searchproducts} />
             </div>
             <div className="catalog">
                 <div className="catalog-pages">
                     {PageProducts.map(product => (
-                        <ProductCard key={product._id} product={product} />
+                        <ProductCard key={product._id} product={product} addToCart={addToCart} cartItems={cartItems}/>
                     ))}
+                </div>
+                <div>
+                <Carousel urls={imagesUrls} />
                 </div>
                 <div className="pages-nav">
                     <button onClick={setPreviousPage}>
@@ -66,5 +95,6 @@ function Catalog() {
     );
 }
 
-export default memo(Catalog)
+
+export default Catalog
 
